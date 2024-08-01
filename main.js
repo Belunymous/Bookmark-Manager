@@ -72,3 +72,13 @@ function addBookmark(name, url) {
                 </div>`;
     bookmarksSection.innerHTML += item;
 }
+(function fetchBookmark() {
+    if (typeof (localStorage.bookmark) != "undefined" && localStorage.bookmark !== "") {
+        let arrayItems = localStorage.bookmark.split(";");
+        arrayItems.length--;
+        for (item of arrayItems) {
+            let itemSplit = item.split(',');
+            addBookmark(itemSplit[0], itemSplit[1]);
+        }
+    }
+})();
