@@ -118,3 +118,30 @@ function editBookmark(thisItem) {
     // Remove the existing bookmark
     removeBookmark(thisItem);
 }
+
+function sortBookmarks() {
+    let bookmarks = [];
+    let arrayItems = localStorage.bookmark.split(";");
+    arrayItems.length--;
+
+    // Collect bookmarks from localStorage
+    for (let item of arrayItems) {
+        let itemSpli = item.split(',');
+        bookmarks.push({ name: itemSpli[0], url: itemSpli[1] });
+    }
+
+    // Sort bookmarks by name
+    bookmarks.sort((a, b) => a.name.localeCompare(b.name));
+
+    // Clear the bookmarks section and localStorage
+    bookmarksSection.innerHTML = "";
+    localStorage.bookmark = "";
+
+    // Add sorted bookmarks back to localStorage and the bookmarks section
+    for (let bookmark of bookmarks) {
+        localStorage.bookmark += `${bookmark.name},${bookmark.url};`;
+        addBookmark(bookmark.name, bookmark.url);
+    }
+}
+
+sortButton.addEventListener("click", sortBookmarks);
