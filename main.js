@@ -52,3 +52,23 @@ button.addEventListener("click", function (e) {
         }
     }
 });
+
+function addBookmark(name, url) {
+    let dataLink = url;
+
+    // After obtaining a bookmark, we display it in a div and add
+    // a button to visit the link, edit it, or delete it
+    if (!url.includes("http")) {
+        url = "//" + url;
+    }
+    let item = `<div class="bookmark">
+                 <span class="bookmark-name">${name}</span>
+                 <a class="visit" href="${url}" target="_blank" 
+                    data-link='${dataLink}'>Visit</a>
+                 <a onclick="editBookmark(this)" 
+                    class="edit" href="#">Edit</a>
+                 <a onclick="removeBookmark(this)" 
+                    class="delete" href="#">Delete</a>
+                </div>`;
+    bookmarksSection.innerHTML += item;
+}
