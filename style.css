@@ -110,3 +110,71 @@ h2 {
 .save_button:hover {
     background-color: #42A5F5;
 }
+
+.bookmarks {
+    width: 100%;
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.bookmark {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333333;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.bookmark:hover {
+    background-color: #444444;
+}
+
+.bookmark span {
+    flex: 1;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.bookmark .visit, .bookmark .edit, .bookmark .delete {
+    display: inline-block;
+    padding: 5px 10px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.bookmark .visit {
+    background-color: #1E88E5;
+    color: #ffffff;
+}
+
+.bookmark .edit {
+    background-color: #42A5F5;
+    color: #ffffff;
+}
+
+.bookmark .delete {
+    background-color: #E53935; 
+    color: #ffffff;
+}
+
+.bookmark .visit:hover {
+    background-color: #42A5F5;
+}
+
+.bookmark .edit:hover {
+    background-color: #64B5F6;
+}
+
+.bookmark .delete:hover {
+    background-color: #F44336;
+}
