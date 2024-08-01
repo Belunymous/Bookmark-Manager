@@ -105,3 +105,16 @@ function removeBookmark(thisItem) {
    
     bookmarksSection.removeChild(item);
 }
+
+function editBookmark(thisItem) {
+    let item = thisItem.parentNode;
+    let itemName = item.querySelector(".bookmark-name").innerHTML;
+    let itemURL = item.querySelector(".visit").dataset.link;
+
+    // Pre-fill the input fields with the existing bookmark details
+    siteName.value = itemName;
+    url.value = itemURL;
+
+    // Remove the existing bookmark
+    removeBookmark(thisItem);
+}
