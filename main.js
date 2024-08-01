@@ -82,3 +82,26 @@ function addBookmark(name, url) {
         }
     }
 })();
+function removeBookmark(thisItem) {
+    let arrayItems = [],
+        index,
+        item = thisItem.parentNode,
+        itemURL = item.querySelector(".visit").dataset.link,
+        itemName = item.querySelector("span").innerHTML;
+    arrayItems = localStorage.bookmark.split(";");
+
+    for (i in arrayItems) {
+        if (arrayItems[i] == `${itemName},${itemURL}`) {
+            index = i;
+            break;
+        }
+    }
+
+    
+    index = arrayItems.indexOf(`${itemName},${itemURL}`);
+    arrayItems.splice(index, 1);
+    localStorage.bookmark = arrayItems.join(";");
+
+   
+    bookmarksSection.removeChild(item);
+}
