@@ -50,3 +50,63 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.form {
+    width: 100%;
+    height: auto;
+    background-color: #2C2C2C;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-field input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #1E88E5;
+    padding-left: 10px;
+    color: #ffffff;
+    margin-top: 5px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.input-field input[type="text"]:focus {
+    border-bottom-color: #42A5F5;
+}
+
+.input-field label {
+    color: #1E88E5;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.save_button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #1E88E5;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.save_button:hover {
+    background-color: #42A5F5;
+}
